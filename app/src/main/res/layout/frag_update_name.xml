@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hviewtech.wawupay.ui.widget.TitleView
+        android:id="@+id/titleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:app_moreClick="confirm"
+        app:app_moreContent="Confirm"
+        app:app_moreType="text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_activity"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_12">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_26"
+            android:paddingTop="@dimen/dp_16"
+            android:paddingRight="@dimen/dp_26"
+            android:paddingBottom="@dimen/dp_16">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/text_label"
+                android:textSize="@dimen/sp_15" />
+
+            <EditText
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_60"
+                android:layout_marginTop="@dimen/dp_6"
+                android:background="@drawable/bg_updatename_text"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                android:singleLine="true"
+                android:textColor="#333333"
+                android:textCursorDrawable="@drawable/cursor_gray"
+                android:textSize="@dimen/sp_17" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

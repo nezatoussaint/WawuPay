@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dp_301"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp_70"
+    android:background="@drawable/leftbar_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    app:layoutAspectRatio="1.34375">
+
+    <net.soulwolf.widget.ratiolayout.widget.RatioImageView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:background="@drawable/user_avatar"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="selectAvatarFromAlbum"
+        app:layoutSquare="true" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_138">
+
+        <TextView
+            android:id="@+id/nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxWidth="@dimen/dp_100"
+            android:singleLine="true"
+            android:text="Jack"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_36" />
+
+        <TextView
+            android:id="@+id/idnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nickname"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:singleLine="true"
+            android:text="ID:"
+            android:textColor="#D0E7ED"
+            android:textSize="@dimen/sp_11" />
+
+
+        <ImageView
+            android:id="@+id/sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:layout_toRightOf="@id/nickname"
+            android:src="@drawable/icon_sex_woman" />
+    </RelativeLayout>
+
+
+</net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout>

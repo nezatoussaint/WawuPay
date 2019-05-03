@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hviewtech.wawupay.ui.widget.InterceptLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/compound"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:drawableRight="@drawable/icon_empty_triangle"
+        android:focusable="false"
+        android:gravity="center"
+        android:hint="CHOOSE SERVICE PROVIDER"
+        android:inputType="none"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="@color/text_label"
+        android:textColorHint="@color/text_label"
+        android:textSize="@dimen/sp_13"
+        android:textStyle="normal" />
+
+</com.hviewtech.wawupay.ui.widget.InterceptLinearLayout>

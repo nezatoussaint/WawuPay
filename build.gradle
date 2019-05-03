@@ -1,0 +1,98 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: 'dependencies.gradle'
+
+buildscript {
+    ext.kotlin_version = '1.3.11'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+        // 仅混淆res资源文件夹
+//        classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.15'
+        // 能够混淆manifest里面四大组件,Application类名
+//        classpath 'top.bingoz:AndResGuard-gradle-plugin:1.2.15'
+    }
+}
+allprojects {
+    repositories {
+        maven {
+            url "https://dl.bintray.com/liujunhongz/maven/"
+        }
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+// 让一些任务不执行
+tasks.whenTaskAdded { task ->
+    if (task.name.equals('lint')) {
+        task.enabled = false
+    }
+    if (task.name.equals('lintVitalRelease')) {
+        task.enabled = false
+    }
+}
+
+//是否是执行Debug相关task (通用函数, 可供子module调用)
+def isDebug() {
+    def taskNames = gradle.startParameter.taskNames
+    for (tn in taskNames) {
+        if ((tn.contains("install") || tn.contains("assemble")) && tn.contains("Debug")) {
+            return true
+        }
+    }
+    return false
+}
+
+/**
+ * 默认构建会进行优化, 如果不需要优化, 则运行下列命令:
+ * ./gradlew assembleDebug -Pso=1
+ * 或者 (构建并安装)
+ * ./gradlew installDebug -Pso=1
+ */
+def readMinSdkVersion() {
+    int is_skip_optimize = hasProperty("so") ? Integer.parseInt(so) : 0
+
+    //如果跳过优化 或 Release版本, 则minSdkVersion使用16; 否则使用21以便加快构建速度
+    if (is_skip_optimize == 1 || !isDebug()) {
+        return 19
+    } else {
+        return 21
+    }
+}
+
+
+subprojects {
+    // 显示所有的依赖
+    task allDeps(type: DependencyReportTask) {}
+
+    afterEvaluate { project ->
+        if (project.hasProperty("android")) {
+            android {
+
+                compileSdkVersion rootProject.ext.compileSdkVersion
+                defaultConfig {
+                    minSdkVersion rootProject.ext.minSdkVersion
+//                    minSdkVersion readMinSdkVersion()
+                }
+            }
+        }
+    }
+}
+
+/**
+ *
+ * keytool -exportcert -list -v -alias <your-key-name> -keystore <path-to-production-keystore>
+ * keytool -exportcert -list -v -alias wawupay -keystore wawupay.jks
+ */

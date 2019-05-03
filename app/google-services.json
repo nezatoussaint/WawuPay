@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "241975327452",
+    "firebase_url": "https://wowpay-606b9.firebaseio.com",
+    "project_id": "wowpay-606b9",
+    "storage_bucket": "wowpay-606b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241975327452:android:fc11ee90699f2cfa",
+        "android_client_info": {
+          "package_name": "com.hviewtech.wowpay.client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241975327452-hb26t218gd0qg46bishmn46ckok40cs5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hviewtech.wowpay.client",
+            "certificate_hash": "61a24fb211da972ae61d6f17d2d6bc3a8d7b17a1"
+          }
+        },
+        {
+          "client_id": "241975327452-4marcdktgqi59erugehpvich6rkrgrdl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1km-Fdpn5NRWThmQkc2g3ffsBGhGMrf4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241975327452-4marcdktgqi59erugehpvich6rkrgrdl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

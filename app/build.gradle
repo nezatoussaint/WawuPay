@@ -1,0 +1,270 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt' // kapt 插件
+
+//apply from: 'AndResGuard.gradle'
+
+
+android {
+    defaultConfig {
+        multiDexEnabled true
+//        applicationId "com.hviewtech.wawupay"
+        applicationId "com.hviewtech.wowpay.client"
+        minSdkVersion 19
+        //noinspection OldTargetApi
+        targetSdkVersion 26
+        versionCode versionCode
+        versionName versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        signConfig {
+            storeFile file(KEYSTORE_FILE)
+            storePassword KEYSTORE_PASSWORD
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
+
+            v1SigningEnabled true
+            v2SigningEnabled false
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.signConfig
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.signConfig
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // debug db port
+            resValue("string", "PORT_NUMBER", "8088")
+            crunchPngs false //关闭crunchPng优化, 以加快构建
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        //lint 遇到 error 时继续 构建
+        abortOnError false
+        //build release 版本 时 开启lint 检测
+        checkReleaseBuilds false
+        // 防止在发布的时候出现因MissingTranslation导致Build Failed!
+        disable 'MissingTranslation'
+        // Rxjava the result of subscribe
+        disable 'CheckResult'
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    dexOptions {
+        dexInProcess true
+        preDexLibraries false
+        javaMaxHeapSize "2g"
+    }
+
+    //跳过Lint和Test相关的task, 以加速编译
+    if (isDebug()) {
+        gradle.taskGraph.whenReady {
+            tasks.each { task ->
+                if (task.name.contains("Test") || task.name.contains("Lint")) {
+                    task.enabled = false
+                }
+            }
+        }
+    }
+
+    afterEvaluate {
+        android.applicationVariants.all { variant ->
+            if (variant.buildType.name == 'debug') {
+                def kotlinGenerated = file("$buildDir/generated/source/kaptKotlin/${variant.name}")
+                variant.addJavaSourceFoldersToModel(kotlinGenerated)
+                return
+            }
+        }
+    }
+
+    kapt {
+        javacOptions {
+            // 增加注解处理器的最大错误次数
+            // 默认为 100。
+            option("-Xmaxerrs", 500)
+        }
+        //generateStubs = true
+        mapDiagnosticLocations = true
+
+    }
+
+    //如果是构建debug包, 则禁用 "png cruncher" (默认cruncherEnabled=true, 禁用以加速构建)
+    aaptOptions { //禁用cruncher, 以加速编译
+        cruncherEnabled = !isDebug()
+        cruncherProcesses = 0
+    }
+
+    packagingOptions {
+        doNotStrip '*/mips/*.so'
+        doNotStrip '*/mips64/*.so'
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            force support.appcompat
+            force support.recyclerview
+            force support.design
+            force extra.kotlin
+
+        }
+    }
+
+    flavorDimensions "default"
+
+    // 渠道配置  改在defaultConfig里面配置
+    productFlavors {
+        dev {
+            buildConfigField("boolean", "APP_DEBUG", "$rootProject.ext.appMode")
+            buildConfigField("boolean", "LOG_DEBUG", "$rootProject.ext.logMode")
+        }
+        wawupay {
+            buildConfigField("boolean", "APP_DEBUG", "false")
+            buildConfigField("boolean", "LOG_DEBUG", "false")
+        }
+    }
+
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [
+                UMENG_CHANNEL: name
+        ] //动态地修改AndroidManifest中的渠道名
+    }
+}
+dependencies {
+    // 数据库调试
+    // http://ip:8081
+    // NOTE: 该库使用了gson
+    // {https://github.com/amitshekhariitbhu/Android-Debug-Database}
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.4'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation('com.android.support.test:runner:1.0.2') {
+        transitive true
+    }
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation extra.kotlin
+
+    // android
+    implementation support.appcompat
+    implementation support.recyclerview
+    implementation support.design
+    implementation support.cardview
+    implementation support.gridlayout
+
+
+    implementation extra.hawk
+
+    implementation extra.rxjava
+    implementation extra.rxkotlin
+    implementation extra.rxandroid
+    implementation extra.rxbinding
+    // 权限请求库
+//    implementation (extra.permissionsdispatcher) {
+//        exclude module: 'support-v13'
+//    }
+//    kapt extra.permissionsdispatcher_processor
+    implementation extra.easypermissions
+//    implementation extra.moshi
+//    implementation extra.moshi_kotlin
+//    kapt extra.moshi_kotlin_codegen
+//    implementation extra.retrofit_converter_moshi
+
+    implementation extra.gson
+    implementation extra.retrofit_converter_gson
+    implementation extra.retrofit
+    implementation extra.retrofit_adapter_rxjava2
+    //implementation extra.retrofit2_kotlin_coroutines_adapter
+
+//    implementation extra.kotlinx_coroutines_core
+
+    implementation extra.okhttp
+    implementation extra.okhttp_logging
+    // 图片压缩库
+    implementation extra.luban
+    implementation extra.dagger
+    kapt extra.dagger_compiler
+    implementation extra.dagger_android
+    // if you use the support libraries
+    kapt extra.dagger_android_processor
+    implementation extra.dagger_android_support
+
+
+    implementation extra.glide
+    implementation extra.glide_annotations
+    implementation extra.glide_okhttp3
+    implementation extra.glide_transformations
+    kapt extra.glide_compiler
+    implementation extra.picture_picker
+    // https://github.com/amphiaraus/Android-RatioLayout
+    implementation extra.ratio
+    implementation extra.SmartRefreshLayout
+    implementation extra.SmartRefreshHeader
+    implementation extra.bga_qrcode_zxing
+
+
+    implementation extra.rxlifecycle
+//    implementation extra.rxlifecycle_components
+    implementation extra.rxlifecycle_android_lifecycle
+    implementation extra.rxlifecycle_kotlin
+//    implementation extra.rxlifecycle_android_lifecycle_kotlin
+
+    implementation extra.vlayout
+
+    implementation extra.androidautosize
+
+    // 修复了bug
+//    implementation extra.swipeback
+    implementation(name: 'swipebacklib', ext: 'aar')
+
+    implementation extra.materialdialogs
+
+    implementation extra.rxbus
+    implementation extra.agentweb
+
+    implementation extra.city_picker
+    // 修复横屏下时间选择器显示空白的问题
+    // implementation extra.time_picker
+    implementation(name: 'sublimepicker', ext: 'aar')
+    implementation extra.sweet_dialog
+
+    implementation extra.bottomdialog
+
+    implementation extra.nice_spinner
+
+    implementation extra.switch_button
+    // google service
+    implementation extra.play_services_maps
+
+    implementation extra.calligraphy3
+    implementation extra.viewpump
+
+
+    implementation extra.expandablelayout
+
+    implementation extra.ViewPagerIndicator
+}
+repositories {
+    mavenCentral()
+}

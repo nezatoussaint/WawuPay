@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">WawuPay</string>
+
+    <string-array name="bank_category">
+        <item>Bank of Kigali</item>
+        <item>KCB Bank</item>
+        <item>Equity Bank</item>
+        <item>BPR Bank</item>
+    </string-array>
+
+    <!-- 账单分类(1-转账 2-店铺付款 3-在线支付 4-AA账单 5-红包 6-提现 7-退款 8-充值)  (非必填)-->
+    <string-array name="transaction_category">
+        <item>All</item>
+        <item>Transfer</item>
+        <item>Agaseke</item>
+        <item>To merchant</item>
+        <item>Online</item>
+        <item>Split bill</item>
+        <item>Agaseke (Group)</item>
+        <item>Withdraw</item>
+        <item>Recharge</item>
+        <item>Refund</item>
+    </string-array>
+
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <!-- Strings related to error -->
+    <string name="error_unkown">Unknown error</string>
+    <string name="error_http">Network eror, Please check your network connection.</string>
+    <string name="error_system">The server is busy, try again later.</string>
+    <string name="error_account_freeze">Blocked account, Please contact WawuPay team</string>
+    <string name="error_api_no_perission">Unauthorized operation</string>
+    <string name="error_login">Wrong Password/Phone number</string>
+    <string name="error_http_400">Bad request</string>
+    <string name="error_http_404">Unknown request</string>
+    <string name="error_http_500">Server error</string>
+    <string name="error_socket_timeout">Connection timeout</string>
+    <string name="error_socket_unreachable">Unvailable connection</string>
+    <string name="error_token">Login failure, try again later</string>
+
+    <string name="open">OPEN</string>
+    <string name="close">CLOSE</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
+
+    <!-- Strings related to loginByToken -->
+    <string name="prompt_username">Phone number</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_sign_up">Register</string>
+    <string name="error_invalid_email">Invalid email address</string>
+    <string name="error_invalid_password">The password is too short</string>
+    <string name="error_incorrect_password">Password mismatch</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">Allow WawuPay to access your contacts in order to provide email
+        completion.
+    </string>
+    <string name="prompt_enter_username">Enter username</string>
+    <string name="prompt_enter_firstname">Enter your first name</string>
+    <string name="prompt_enter_lastname">Enter your last name</string>
+    <string name="prompt_enter_email">Enter your ymail</string>
+    <string name="prompt_enter_phonenumber">Enter your valid phone number</string>
+    <string name="prompt_vertification_code">Verification code</string>
+    <string name="prompt_enter_password">Set Password</string>
+    <string name="prompt_confirm_password">Confirm Password</string>
+    <string name="prompt_register_wowpay_protocol">Agree to WawuPay user agreements</string>
+    <string name="prompt_wowpay_protocol">WawuPay user agreements</string>
+    <string name="prompt_identity_profile">Dear esteemed user, according to WawuPay user regulations we should verify your account before you start to make transactions.
+        Please provide your identity information and allow at most 24 hours for processing. Thank you.</string>
+    <string name="count_time" formatted="true">%dS</string>
+    <string name="personal_profile">Personal Profile</string>
+    <string name="my_wallet">My wallet</string>
+    <string name="transctions">My transctions</string>
+    <string name="setting">Setting</string>
+    <string name="prompt_verify_payment_password">Please Enter Payment Password</string>
+    <string name="prompt_verify_payment_new_password">Set Payment password</string>
+    <string name="prompt_verify_payment_reenter_new_password">Confirm Password</string>
+    <string name="prompt_password_mismatch">Password mismatch, please retype your password</string>
+
+    <string name="transition_bankcard">BankCardTransistion</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="contacts_rationale">Allow WawuPay to access your phone contacts</string>
+
+
+    <string name="srl_header_pulling">Pull Down To Refresh</string>
+    <string name="srl_header_release">Release To Refresh</string>
+    <string name="srl_header_refreshing">Refreshing…</string>
+    <string name="srl_header_loading">Loading…</string>
+    <string name="srl_header_finish">Refresh Success</string>
+    <string name="srl_header_failed">Refresh Failed</string>
+    <string name="srl_header_update">\'Last Update\' M-d HH:mm</string>
+    <string name="srl_header_secondary">Release To Second Floor</string>
+
+    <string name="srl_footer_pulling">Pull Up To Load More</string>
+    <string name="srl_footer_release">Release To Load More</string>
+    <string name="srl_footer_loading">Loading…</string>
+    <string name="srl_footer_refreshing">Refreshing…</string>
+    <string name="srl_footer_finish">Load Success</string>
+    <string name="srl_footer_failed">Load Failed</string>
+    <string name="srl_footer_nothing">No More Data</string>
+
+    <string name="srl_content_empty">The content view in SmartRefreshLayout is empty. Do you forget to add it in xml layout file?</string>
+    <string name="srl_component_falsify" formatted="false">%s falsify area,\n Represents the height[%.1fdp] of drag at run time,\n It does not show anything.</string>
+    <string name="get_code">Get Code</string>
+
+
+</resources>

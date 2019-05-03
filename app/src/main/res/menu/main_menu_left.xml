@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_personal_profile"
+            android:checked="true"
+            android:icon="@drawable/leftbar_icon_personal"
+            android:title="@string/personal_profile"/>
+
+        <item
+            android:id="@+id/menu_my_wallet"
+            android:icon="@drawable/leftbar_icon_wallet"
+            android:title="@string/my_wallet"/>
+
+        <item
+            android:id="@+id/menu_transctions"
+            android:icon="@drawable/leftbar_icon_transctions"
+            android:title="@string/transctions"/>
+
+        <item
+            android:id="@+id/menu_setting"
+            android:icon="@drawable/leftbar_icon_set"
+            android:title="@string/setting"/>
+    </group>
+</menu>

@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "514597750981",
+    "firebase_url": "https://rich-brace-196814.firebaseio.com",
+    "project_id": "rich-brace-196814",
+    "storage_bucket": "rich-brace-196814.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514597750981:android:b5d75907de594a2d",
+        "android_client_info": {
+          "package_name": "com.google.firebase.codelab.friendlychat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514597750981-2ki10hhdm6532ihpdsrlqus607e5rngi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.google.firebase.codelab.friendlychat",
+            "certificate_hash": "64cc9e3f71fd2c95062506cec545ddaf3e80b0c5"
+          }
+        },
+        {
+          "client_id": "514597750981-s1iki9e7ehhbgu1ns7m3jv3htpccshk5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2OgqEiQ6vsgnORNny-lG0fQOh3LZn1zI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514597750981-s1iki9e7ehhbgu1ns7m3jv3htpccshk5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514597750981:android:fc11ee90699f2cfa",
+        "android_client_info": {
+          "package_name": "com.hviewtech.wowpay.client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514597750981-a4a9t8av4n7gd9u0s5png9vd2pte51eb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hviewtech.wowpay.client",
+            "certificate_hash": "89e590f8135b0bbf307fd9cca67e72704a151571"
+          }
+        },
+        {
+          "client_id": "514597750981-s1iki9e7ehhbgu1ns7m3jv3htpccshk5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2OgqEiQ6vsgnORNny-lG0fQOh3LZn1zI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514597750981-s1iki9e7ehhbgu1ns7m3jv3htpccshk5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

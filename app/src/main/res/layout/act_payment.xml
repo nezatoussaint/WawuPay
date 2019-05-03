@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hviewtech.wawupay.ui.widget.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:app_title="Payment" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_activity"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_49"
+        android:paddingRight="@dimen/dp_12">
+
+
+        <net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_30"
+            android:background="@color/white"
+            app:heightRatio="6"
+            app:widthRatio="7">
+
+            <net.soulwolf.widget.ratiolayout.widget.RatioImageView
+                android:id="@+id/qrcode"
+                android:layout_width="@dimen/dp_158"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:layoutSquare="true" />
+
+        </net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:background="@drawable/bg_item_selector"
+            android:onClick="setAmount"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Set amout"
+                android:textColor="#999999"
+                android:textSize="@dimen/sp_17" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+
+                android:layout_marginRight="@dimen/dp_24"
+                android:src="@drawable/icon_right" />
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

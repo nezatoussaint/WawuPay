@@ -1,0 +1,76 @@
+apply plugin: 'AndResGuard'
+
+andResGuard {
+    // mappingFile = file("./resource_mapping.txt")
+    mappingFile = null
+    // 如果使用了V2签名，暂时无法进行7zip压缩
+    // signingConfigs中使用v2SigningEnabled false 来关闭v2签名。
+    // The first element of list which returned by AssetManager#list(String path) is empty string when you're using the APK which is compressed by 7zip. #162
+    // 在使用7zip压缩的APK时，调用AssetManager#list(String path)返回结果的首个元素为空字符串. #162
+    use7zip = false
+    useSign = true
+    // 打开这个开关，会keep住所有资源的原始路径，只混淆资源的名字
+    keepRoot = false
+    whiteList = [
+            // for your icon
+            "R.mipmap.ic_launcher",
+            "R.drawable.jpush_notification_icon",
+            // for fabric
+            "R.string.com.crashlytics.*",
+            // for umeng update
+            "R.string.umeng*",
+            "R.string.UM*",
+            "R.string.tb_*",
+            "R.layout.umeng*",
+            "R.layout.tb_*",
+            "R.drawable.umeng*",
+            "R.drawable.tb_*",
+            "R.anim.umeng*",
+            "R.color.umeng*",
+            "R.color.tb_*",
+            "R.style.*UM*",
+            "R.style.umeng*",
+            "R.id.umeng*",
+            // umeng showShareDialog for sina
+            "R.drawable.sina*",
+            // for google-services.json
+            "R.string.google_app_id",
+            "R.string.gcm_defaultSenderId",
+            "R.string.default_web_client_id",
+            "R.string.ga_trackingId",
+            "R.string.firebase_database_url",
+            "R.string.google_api_key",
+            "R.string.google_crash_reporting_api_key",
+            // umeng showShareDialog for facebook
+            "R.layout.*facebook*",
+            "R.id.*facebook*",
+            // umeng showShareDialog for messager
+            "R.layout.*messager*",
+            "R.id.*messager*",
+            // umeng showShareDialog commond
+            "R.id.progress_bar_parent",
+            "R.id.webView",
+            "R.id.*"
+    ]
+    compressFilePattern = [
+            "*.png",
+            "*.jpg",
+            "*.jpeg",
+            "*.gif",
+    ]
+    sevenzip {
+        artifact = 'com.tencent.mm:SevenZip:1.2.15'
+        //path = "/usr/local/bin/7za"
+    }
+
+    /**
+     * 可选： 如果不设置则会默认覆盖assemble输出的apk
+     **/
+    finalApkBackupPath = "${project.rootDir}/final.apk"
+
+    /**
+     * 可选: 指定v1签名时生成jar文件的摘要算法
+     * 默认值为“SHA-1”
+     **/
+    //digestalg = "SHA-256"
+}

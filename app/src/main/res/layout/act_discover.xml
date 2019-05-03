@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hviewtech.wawupay.ui.widget.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:app_title="WawuPay Discover" />
+
+    <RelativeLayout
+        android:id="@+id/rlMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_activity"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <org.angmarch.views.NiceSpinner
+            android:id="@+id/spinnerCategory"
+            style="@style/Spinner.DropDown"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_14"
+            android:layout_marginRight="@dimen/dp_12"
+            android:background="@color/bg_activity"
+            android:spinnerMode="dropdown" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinnerCategory"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_36"
+            android:layout_marginRight="@dimen/dp_12"
+            android:background="@color/white"
+            android:divider="@drawable/divider_discover_category"
+            android:dividerPadding="@dimen/dp_4"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="showStars"
+                android:paddingLeft="@dimen/dp_8"
+                android:paddingTop="@dimen/dp_13"
+
+                android:paddingRight="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_13"
+                android:src="@drawable/discover_icon_coffee" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="showStars"
+                android:paddingLeft="@dimen/dp_8"
+
+                android:paddingTop="@dimen/dp_13"
+                android:paddingRight="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_13"
+                android:src="@drawable/discover_icon_food" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="showStars"
+                android:paddingLeft="@dimen/dp_8"
+
+                android:paddingTop="@dimen/dp_13"
+                android:paddingRight="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_13"
+                android:src="@drawable/discover_icon_supermarket" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="showStars"
+                android:paddingLeft="@dimen/dp_8"
+                android:paddingTop="@dimen/dp_13"
+                android:paddingRight="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_13"
+                android:src="@drawable/discover_icon_shopping" />
+        </LinearLayout>
+
+
+        <com.hviewtech.wawupay.ui.widget.StateButton
+            style="@style/MaterialButton"
+            android:layout_width="@dimen/dp_130"
+            android:layout_height="@dimen/dp_44"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:onClick="exit"
+            android:text="Exit"
+            android:textSize="@dimen/sp_16"
+            app:normalBackgroundColor="@color/red"
+            app:normalTextColor="#F3F3F3"
+            app:pressedTextColor="@color/white"
+            app:radius="@dimen/dp_22" />
+    </RelativeLayout>
+</LinearLayout>

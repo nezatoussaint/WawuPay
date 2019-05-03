@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/nav_bg"
+            android:orientation="vertical">
+            <!--此View用来腾出状态栏的空间，设置颜色与标题栏一致-->
+            <View
+                android:id="@+id/statusbar_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/statusbar_view_height" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_46"
+                android:divider="@drawable/space_medium"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:showDividers="middle">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_12">
+
+                    <net.soulwolf.widget.ratiolayout.widget.RatioImageView
+                        android:id="@+id/avatarDefault"
+                        android:layout_width="@dimen/dp_36"
+                        android:layout_height="@dimen/dp_36"
+                        android:background="@drawable/user_avatar"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:onClick="openDrawer"
+                        android:src="@drawable/user_avatar"
+                        app:layoutSquare="true" />
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingLeft="@dimen/dp_36"
+                    android:paddingRight="@dimen/dp_36"
+                    android:singleLine="true"
+                    android:text="@string/app_name"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <net.soulwolf.widget.ratiolayout.widget.RatioRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F3F3F3">
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tabGroup" />
+
+            <net.soulwolf.widget.ratiolayout.widget.RatioRadioGroup
+                android:id="@+id/tabGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                app:layoutAspectRatio="7">
+
+                <RadioButton
+                    android:id="@+id/tab_home"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableTop="@drawable/tab_home_selector"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:gravity="center_horizontal"
+                    android:text="Home"
+                    android:textColor="@drawable/tab_text_selector" />
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:clickable="false"
+                    android:focusable="false" />
+
+                <RadioButton
+                    android:id="@+id/tab_discover"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawableTop="@drawable/tab_discover_selector"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:gravity="center_horizontal"
+                    android:text="Discover"
+                    android:textColor="@drawable/tab_text_selector" />
+
+
+            </net.soulwolf.widget.ratiolayout.widget.RatioRadioGroup>
+
+            <ImageView
+                android:id="@+id/tabAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="extraFunction"
+                android:src="@drawable/tab_add" />
+        </net.soulwolf.widget.ratiolayout.widget.RatioRelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start|top"
+        app:headerLayout="@layout/main_header"
+        app:menu="@menu/main_menu_left" />
+</android.support.v4.widget.DrawerLayout>

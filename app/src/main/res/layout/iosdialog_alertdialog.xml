@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lLayout_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_alertview_alert"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_15"
+        android:gravity="center"
+        android:textColor="@color/textColor_alert_title"
+        android:textSize="@dimen/textSize_alert_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txt_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_50"
+        android:layout_marginRight="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_30"
+        android:gravity="center"
+        android:textColor="@color/textColor_alert_title"
+        android:textSize="@dimen/textSize_alert_msg" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_5"
+        android:layout_marginTop="@dimen/marginBottom_alert_msg"
+        android:background="@color/bgColor_divier" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_pos"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_alert_button"
+            android:layout_weight="1"
+            android:background="@drawable/bg_alertbutton_left"
+            android:gravity="center"
+            android:textColor="@color/textColor_alert_button_destructive"
+            android:textSize="@dimen/textSize_alert_button" />
+
+        <ImageView
+            android:id="@+id/img_line"
+            android:layout_width="@dimen/dp_0_5"
+            android:layout_height="@dimen/height_alert_button"
+            android:background="@color/bgColor_divier" />
+
+        <Button
+            android:id="@+id/btn_neg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_alert_button"
+            android:layout_weight="1"
+            android:background="@drawable/bg_alertbutton_right"
+            android:gravity="center"
+            android:textColor="@color/textColor_alert_button_others"
+            android:textSize="@dimen/textSize_alert_button" />
+
+    </LinearLayout>
+
+</LinearLayout>

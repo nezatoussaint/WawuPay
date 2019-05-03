@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/shape_id">
+        <!-- 倒三角 -->
+        <rotate
+            android:fromDegrees="45"
+            android:pivotX="135%"
+            android:pivotY="15%"
+            android:toDegrees="45">
+            <shape android:shape="rectangle">
+
+                <stroke
+                    android:width="@dimen/dp_1"
+                    android:color="@color/colorPrimary"
+                    android:dashWidth="@dimen/dp_1" />
+                <solid android:color="@color/colorPrimary" />
+            </shape>
+        </rotate>
+    </item>
+    <!--
+    <item>
+
+        &lt;!&ndash; 正三角 &ndash;&gt;
+        <rotate
+            android:fromDegrees="45"
+            android:pivotX="-40%"
+            android:pivotY="80%"
+            android:toDegrees="45">
+            <shape android:shape="rectangle">
+
+                <stroke
+                    android:width="@dimen/dp_1"
+                    android:color="@color/colorPrimary" />
+                <solid android:color="@color/colorPrimary" />
+            </shape>
+        </rotate>
+    </item>
+
+    -->
+</layer-list>
+
+
+
+

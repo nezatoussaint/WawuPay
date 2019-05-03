@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<net.soulwolf.widget.ratiolayout.widget.RatioLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_bankCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp_16"
+    android:background="@drawable/bankcard_bg"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp_27"
+    android:transitionName="@string/transition_bankcard"
+    app:layoutAspectRatio="2.333">
+
+    <TextView
+        android:id="@+id/bankName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_28"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_20" />
+
+    <TextView
+        android:id="@+id/realName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textColor="#BAEBD6"
+        android:textSize="@dimen/sp_15" />
+
+    <Space
+        android:layout_width="@dimen/dp_1"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <com.hviewtech.wawupay.ui.widget.ContentWithSpaceTextView
+        android:id="@+id/cardNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_28"
+        android:ellipsize="end"
+        android:maxLength="16"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_35"
+        app:epaysdk_type="card" />
+
+</net.soulwolf.widget.ratiolayout.widget.RatioLinearLayout>

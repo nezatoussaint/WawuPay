@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hviewtech.wawupay.ui.widget.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:app_title="Report" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_activity"
+        android:clipChildren="false"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_49"
+        android:paddingRight="@dimen/dp_12">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_26"
+            android:paddingTop="@dimen/dp_16"
+            android:paddingRight="@dimen/dp_26">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dp_6"
+                android:singleLine="true"
+                android:text="Title"
+                android:textColor="@color/text_label"
+                android:textSize="@dimen/sp_15" />
+
+            <EditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_60"
+                android:background="@drawable/bg_report_text"
+                android:gravity="top"
+                android:hint="Enter claim reason"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_6"
+                android:paddingRight="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_6"
+                android:singleLine="true"
+                android:textColor="#333333"
+                android:textColorHint="#CCCCCC"
+                android:textCursorDrawable="@drawable/cursor_gray"
+                android:textSize="@dimen/sp_14" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_1"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_4"
+                android:background="#DADADA"
+                android:paddingLeft="@dimen/dp_m_10"
+                android:paddingRight="@dimen/dp_m_10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dp_6"
+                android:paddingBottom="@dimen/dp_6"
+                android:singleLine="true"
+                android:text="Content"
+                android:textColor="@color/text_label"
+                android:textSize="@dimen/sp_15" />
+
+            <EditText
+                android:id="@+id/etContent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_60"
+                android:background="@drawable/bg_report_text"
+                android:gravity="top"
+                android:hint="Text area"
+                android:inputType="number"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_6"
+                android:paddingRight="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_6"
+                android:singleLine="true"
+                android:textColor="#333333"
+                android:textColorHint="#CCCCCC"
+                android:textCursorDrawable="@drawable/cursor_gray"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/orderNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:singleLine="true"
+                android:textColor="#CCCCCC"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_20"
+            android:paddingBottom="@dimen/dp_10">
+
+
+            <CheckBox
+                android:id="@+id/askRefund"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/register_agree_seletor"
+                android:checked="true"
+                android:padding="@dimen/dp_6" />
+
+            <TextView
+                android:id="@+id/protocol_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ask Refund"
+                android:textColor="@color/text_label"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+
+        <com.hviewtech.wawupay.ui.widget.StateButton
+            style="@style/MaterialButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_12"
+            android:onClick="report"
+            android:text="Submit"
+            android:textSize="@dimen/sp_16"
+            app:normalBackgroundColor="#2BCD87"
+            app:normalTextColor="#F3F3F3"
+            app:pressedTextColor="@color/white"
+            app:radius="@dimen/dp_22" />
+    </LinearLayout>
+</LinearLayout>

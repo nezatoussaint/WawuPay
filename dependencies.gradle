@@ -1,0 +1,171 @@
+ext {
+    //生产环境
+    versionName = "1.0"
+    versionCode = 1
+    logMode = true
+    appMode = true
+
+    // 配置
+    applicationIdSuffix = ''
+    app_name = 'WawuPay'
+
+//    androidSupportVersion = '1.0.0'
+//    androidSupportVersion = '26.1.0'
+    androidSupportVersion = '27.1.1'
+//    androidSupportVersion = '28.0.0'
+    minSdkVersion = 19
+    compileSdkVersion = 27
+    gsonVersion = '2.8.5'
+    moshiVersion = '1.8.0'
+    rxandroidVersion = '2.0.2'
+    rxjavaVersion = '2.1.16'
+    rxkotlinVersion = '2.3.0'
+    permissionDispatcherVersion = '3.3.1'
+
+    retrofitVersion = '2.4.0'
+    okhttpVersion = '3.11.0'
+
+    lubanVersion = '1.1.8'
+
+    dagger2Version = '2.16'
+    vlayoutVersion = '1.2.8'
+    glideVersion = '4.8.0'
+    pictureSelectorVersion = 'v2.2.3'
+    smartRefreshLayoutVersion = '1.0.5.1'
+    bgaQrcodeZxingVersion = '1.3.4'
+    easypermissionsVersion = '1.3.0'
+    rxbindingVersion = '2.2.0'
+    rxlifecycleVersion = '2.2.1'
+    googleServiceVersion = '12.0.0'
+
+    support = [
+            appcompat               : "com.android.support:appcompat-v7:${androidSupportVersion}",
+            animated_vector_drawable: "com.android.support:animated-vector-drawable:${androidSupportVersion}",
+            design                  : "com.android.support:design:${androidSupportVersion}",
+            support_annotations     : "com.android.support:support-annotations:${androidSupportVersion}",
+            support_v4              : "com.android.support:support-v4:${androidSupportVersion}",
+            percent                 : "com.android.support:percent:${androidSupportVersion}",
+            cardview                : "com.android.support:cardview-v7:${androidSupportVersion}",
+            recyclerview            : "com.android.support:recyclerview-v7:${androidSupportVersion}",
+            gridlayout              : "com.android.support:gridlayout-v7:${androidSupportVersion}",
+            constraint_layout       : 'com.android.support.constraint:constraint-layout:1.1.2',
+//            core                   : "androidx.core:core:${androidSupportVersion}",
+//            core_ui                : "androidx.legacy:legacy-support-core-ui:${androidSupportVersion}",
+//            core_utils            : "androidx.legacy:legacy-support-core-utils:${androidSupportVersion}",
+//            viewpager            : "androidx.viewpager:viewpager:${androidSupportVersion}",
+//            appcompat              : "androidx.appcompat:appcompat:${androidSupportVersion}",
+//            vectordrawable_animated: "androidx.vectordrawable:vectordrawable-animated:${androidSupportVersion}",
+//            design                 : "com.google.android.material:material:${androidSupportVersion}",
+//            support_annotations    : "androidx.annotation:annotation:${androidSupportVersion}",
+//            support_v4             : "androidx.legacy:legacy-support-v4:${androidSupportVersion}",
+//            cardview               : "androidx.cardview:cardview:${androidSupportVersion}",
+//            recyclerview           : "androidx.recyclerview:recyclerview:${androidSupportVersion}",
+//            gridlayout             : "androidx.gridlayout:gridlayout:${androidSupportVersion}",
+//            constraint_layout      : 'androidx.constraintlayout:constraintlayout:1.1.2',
+//
+    ]
+
+
+    extra = [
+            kotlin                              : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
+            // kotlin支持优秀,但还是使用coroutines, 但是序列化不是很好
+            moshi                               : "com.squareup.moshi:moshi:$moshiVersion",
+            moshi_kotlin                        : "com.squareup.moshi:moshi-kotlin:$moshiVersion",
+            moshi_kotlin_codegen                : "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion",
+            kotlinx_coroutines_core             : 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1',
+            // kotlin相关
+            retrofit2_kotlin_coroutines_adapter : 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2',
+
+            gson                                : "com.google.code.gson:gson:${gsonVersion}",
+            fastjson                            : 'com.alibaba:fastjson:1.1.70.android',
+
+            rxjava                              : "io.reactivex.rxjava2:rxjava:${rxjavaVersion}",
+            rxandroid                           : "io.reactivex.rxjava2:rxandroid:${rxandroidVersion}",
+            rxkotlin                            : "io.reactivex.rxjava2:rxkotlin:${rxkotlinVersion}",
+            rxbinding                           : "com.jakewharton.rxbinding2:rxbinding:${rxbindingVersion}",
+            permissionsdispatcher               : "com.github.hotchemi:permissionsdispatcher:${permissionDispatcherVersion}",
+            permissionsdispatcher_processor     : "com.github.hotchemi:permissionsdispatcher-processor:${permissionDispatcherVersion}",
+            // retrofit
+            retrofit                            : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofit_adapter_rxjava2            : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+            retrofit_converter_gson             : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            retrofit_converter_moshi            : "com.squareup.retrofit2:converter-moshi:${retrofitVersion}",
+            retrofit_mock                       : "com.squareup.retrofit2:retrofit-mock:${retrofitVersion}",
+            okhttp                              : "com.squareup.okhttp3:okhttp:${okhttpVersion}",
+            okhttp_logging                      : "com.squareup.okhttp3:logging-interceptor:${okhttpVersion}",
+            // 图片压缩库
+            luban                               : "top.zibin:Luban:${lubanVersion}",
+            // dagger2
+            dagger                              : "com.google.dagger:dagger:${dagger2Version}",
+            dagger_compiler                     : "com.google.dagger:dagger-compiler:${dagger2Version}",
+            dagger_android                      : "com.google.dagger:dagger-android:${dagger2Version}",
+            dagger_android_support              : "com.google.dagger:dagger-android-support:${dagger2Version}",// if you use the support libraries
+            dagger_android_processor            : "com.google.dagger:dagger-android-processor:${dagger2Version}",
+            // vlayout
+            vlayout                             : "com.alibaba.android:vlayout:${vlayoutVersion}@aar",
+            // timber
+            timber                              : 'com.jakewharton.timber:timber:4.7.1',
+            // glide
+            glide                               : "com.github.bumptech.glide:glide:${glideVersion}",
+            glide_annotations                   : "com.github.bumptech.glide:annotations:${glideVersion}",
+            glide_compiler                      : "com.github.bumptech.glide:compiler:${glideVersion}",
+            glide_okhttp3                       : "com.github.bumptech.glide:okhttp3-integration:${glideVersion}",
+            glide_transformations               : 'jp.wasabeef:glide-transformations:3.1.1',
+            // If you want to use the GPU Filters
+            glide_transformations_gpuimage      : 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1',
+            // picture
+            picture_picker                      : "com.github.LuckSiege.PictureSelector:picture_library:${pictureSelectorVersion}",
+            // ratio https://github.com/amphiaraus/Android-RatioLayout
+            ratio                               : 'net.soulwolf.widget:ratiolayout:2.1.0',
+            //1.1.0 API改动过大，老用户升级需谨慎
+            SmartRefreshLayout                  : "com.scwang.smartrefresh:SmartRefreshLayout:${smartRefreshLayoutVersion}",
+            //没有使用特殊Header，可以不加这行
+            SmartRefreshHeader                  : "com.scwang.smartrefresh:SmartRefreshHeader:${smartRefreshLayoutVersion}",
+            // Qrcode
+            bga_qrcode_zxing                    : "cn.bingoogolapple:bga-qrcode-zxing:${bgaQrcodeZxingVersion}",
+            // permission
+            easypermissions                     : "pub.devrel:easypermissions:${easypermissionsVersion}",
+            switch_button                       : 'com.github.zcweng:switch-button:0.0.3@aar',
+            // material dialog
+            material_dialogs                    : 'com.afollestad.material-dialogs:core:0.9.6.0',
+            // lifecycle
+            rxlifecycle                         : "com.trello.rxlifecycle2:rxlifecycle:${rxlifecycleVersion}",
+            // If you want to use Android Lifecycle for providers
+            rxlifecycle_android_lifecycle       : "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle:${rxlifecycleVersion}",
+            rxlifecycle_components              : "com.trello.rxlifecycle2:rxlifecycle-components:${rxlifecycleVersion}",
+            rxlifecycle_kotlin                  : "com.trello.rxlifecycle2:rxlifecycle-kotlin:${rxlifecycleVersion}",
+            rxlifecycle_android_lifecycle_kotlin: "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:${rxlifecycleVersion}",
+            // hawk                          : "com.orhanobut:hawk:2.0.1",
+            // 改良版hawk
+            hawk                                : "top.bingoz:hawk:2.1.2",
+            // https://github.com/JessYanCoding/AndroidAutoSize
+            androidautosize                     : 'me.jessyan:autosize:1.1.0',
+            // https://github.com/Justson/AgentWeb
+            agentweb                            : 'com.just.agentweb:agentweb:4.0.2',
+            // https://github.com/lzyzsd/JsBridge
+            //jsbridge                           : 'com.github.lzyzsd:jsbridge:1.0.4',
+            // https://github.com/gongwen/SwipeBackLayout
+            swipeback                           : 'com.gongwen:swipeback:1.0.2',
+            // https://github.com/afollestad/material-dialogs
+            materialdialogs                     : 'com.afollestad.material-dialogs:core:0.9.6.0',
+            // https://github.com/JavaNoober/BackgroundLibrary  无需自定义shape
+            //backgorund                         : 'com.noober.backgorund:core:1.0.5',
+
+            rxbus                               : "com.blankj:rxbus:1.5",
+            city_picker                         : 'com.github.liujunhongz:JDCityPicker:v1.0',
+            time_picker                         : 'com.appeaser.sublimepickerlibrary:sublimepickerlibrary:2.1.2',
+            // sweet-alert-dialog(jitpack)
+            sweet_dialog                        : 'com.github.liujunhongz:sweet-alert-dialog:v2.4',
+            // BottomDialog
+            bottomdialog                        : 'me.shaohui:bottomdialog:1.1.9',
+            // google service
+            play_services_maps                  : "com.google.android.gms:play-services-maps:${googleServiceVersion}",
+            nice_spinner                        : 'com.github.arcadefire:nice-spinner:1.3.1',
+            // 字体  https://github.com/InflationX/Calligraphy
+            calligraphy3                        : 'io.github.inflationx:calligraphy3:3.0.0',
+            viewpump                            : 'io.github.inflationx:viewpump:1.0.0',
+            expandablelayout                    : 'net.cachapa.expandablelayout:expandablelayout:2.9.2',
+            // tab
+            ViewPagerIndicator: 'com.shizhefei:ViewPagerIndicator:1.1.7',
+    ]
+}

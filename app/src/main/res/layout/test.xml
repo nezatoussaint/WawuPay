@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="@dimen/dp_20"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_search"
+        android:orientation="vertical"
+        android:layout_marginBottom="-15dp"
+        android:layout_height="@dimen/dp_200">
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll2"
+
+
+        android:layout_below="@+id/ll3"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="-15dp"
+        android:background="@drawable/bg_search"
+        android:layout_height="@dimen/dp_200">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:layout_below="@id/ll1"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/test"
+            android:layout_height="50dp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/test"
+            android:layout_height="50dp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</RelativeLayout>

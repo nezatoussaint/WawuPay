@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_activity"
+    android:orientation="vertical">
+
+
+    <com.hviewtech.wawupay.ui.widget.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:app_title="Electricity" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.hviewtech.wawupay.ui.widget.AdjustImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40dp"
+            android:src="@drawable/poc_pay_ribbon" />
+
+        <com.hviewtech.wawupay.ui.widget.AdjustImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="-20dp"
+            android:src="@drawable/down_background" />
+
+
+        <com.hviewtech.wawupay.ui.widget.RoundLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_10"
+            app:bottomLeftRadius="@dimen/dp_10"
+            app:bottomRightRadius="@dimen/dp_66"
+            app:topLeftRadius="@dimen/dp_66"
+            app:topRightRadius="@dimen/dp_10">
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_340"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_45"
+                android:layout_marginRight="@dimen/dp_30"
+                android:divider="@drawable/divider_vert8"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:src="@drawable/poc_icon" />
+
+                    <EditText
+                        android:id="@+id/etMeterNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="ENTER POC"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:singleLine="true"
+                        android:textColor="@color/text_label"
+                        android:textColorHint="@color/text_label"
+                        android:textSize="@dimen/sp_14"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <com.hviewtech.wawupay.ui.widget.RoundLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:bottomLeftRadius="@dimen/dp_10"
+                    app:bottomRightRadius="@dimen/dp_36"
+                    app:topLeftRadius="@dimen/dp_36"
+                    app:topRightRadius="@dimen/dp_10">
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_230"
+                        android:background="@color/cl_ededed" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/dp_20"
+                            android:paddingTop="@dimen/dp_24"
+                            android:paddingRight="@dimen/dp_20">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:src="@drawable/poc_icon" />
+
+
+                            <EditText
+                                android:id="@+id/etAmount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:hint="ENTER AMOUNT"
+                                android:imeOptions="actionDone"
+                                android:inputType="numberDecimal"
+                                android:maxLines="1"
+                                android:paddingLeft="@dimen/dp_10"
+                                android:paddingRight="@dimen/dp_10"
+                                android:singleLine="true"
+                                android:textColor="@color/text_label"
+                                android:textColorHint="@color/text_label"
+                                android:textSize="@dimen/sp_14"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:layout_marginRight="@dimen/dp_20">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/amountList"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_90"
+                                android:overScrollMode="never" />
+
+                        </RadioGroup>
+
+
+                        <com.hviewtech.wawupay.ui.widget.StateButton
+                            style="@style/Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_34"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            android:layout_marginTop="@dimen/dp_8"
+                            android:layout_marginRight="@dimen/dp_20"
+                            android:onClick="pay"
+                            android:text="Pay"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_14"
+                            android:textStyle="bold"
+                            app:normalBackgroundColor="#A59ECA"
+                            app:normalStrokeColor="@color/white"
+                            app:round="true" />
+
+                    </LinearLayout>
+                </com.hviewtech.wawupay.ui.widget.RoundLayout>
+
+
+            </LinearLayout>
+
+
+        </com.hviewtech.wawupay.ui.widget.RoundLayout>
+
+
+        <com.hviewtech.wawupay.ui.widget.StateButton
+            style="@style/Button"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_34"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginBottom="@dimen/dp_50"
+            android:onClick="showOrders"
+            android:text="Orders"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:normalBackgroundColor="#A59ECA"
+            app:normalStrokeColor="@color/white"
+            app:round="true" />
+
+        <com.hviewtech.wawupay.ui.widget.StateButton
+            style="@style/Button"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_34"
+            android:layout_gravity="right|bottom"
+            android:layout_marginRight="@dimen/dp_30"
+            android:layout_marginBottom="@dimen/dp_50"
+            android:onClick="contactUs"
+            android:text="Contact Us"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:normalBackgroundColor="#92BED2"
+            app:normalStrokeColor="@color/white"
+            app:round="true" />
+    </FrameLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/nav_bg"
+    android:orientation="vertical"
+    tools:parentTag="android.widget.LinearLayout">
+    <!--此View用来腾出状态栏的空间，设置颜色与标题栏一致-->
+    <View
+        android:id="@id/app_statusbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <FrameLayout
+        android:id="@+id/real_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_46"
+        android:clipChildren="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@id/app_return"
+            android:layout_width="?android:attr/actionBarSize"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="16dp"
+            android:paddingBottom="18dp"
+            android:scaleType="center"
+            android:src="@drawable/nav_return"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@id/app_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="?android:attr/actionBarSize"
+            android:layout_marginRight="?android:attr/actionBarSize"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="标题" />
+
+        <TextView
+            android:id="@id/app_tvmore"
+            android:layout_width="?android:attr/actionBarSize"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            tools:text="更多" />
+
+        <ImageView
+            android:id="@id/app_ivmore"
+            android:layout_width="?android:attr/actionBarSize"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="16dp"
+            android:paddingBottom="18dp"
+            android:scaleType="center"
+            android:visibility="invisible"
+            tools:ignore="ContentDescription" />
+
+    </FrameLayout>
+</LinearLayout>

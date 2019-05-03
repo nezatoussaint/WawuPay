@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_activity"
+    android:orientation="vertical">
+
+
+    <com.hviewtech.wawupay.ui.widget.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:app_title="Add Traveller" />
+
+
+    <net.soulwolf.widget.ratiolayout.widget.RatioImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/backg"
+        app:heightRatio="1121"
+        app:widthRatio="2996" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginTop="-20dp"
+        android:layout_marginRight="@dimen/dp_40"
+        android:background="@drawable/bg_addtraveller"
+        android:clipChildren="false">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clipChildren="false"
+            android:divider="@drawable/divider_vert8"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_25"
+            android:paddingTop="@dimen/dp_45"
+            android:paddingRight="@dimen/dp_25"
+            android:paddingBottom="@dimen/dp_45"
+            android:showDividers="middle">
+
+
+            <EditText
+                android:id="@+id/etFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="First name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences|textAutoComplete"
+                android:singleLine="true"
+                android:textColor="@color/cl_333333"
+                android:textColorHint="@color/text_hint"
+                android:textSize="@dimen/sp_16" />
+
+
+            <EditText
+                android:id="@+id/etLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Last Name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences|textAutoComplete"
+                android:singleLine="true"
+                android:textColor="@color/cl_333333"
+                android:textColorHint="@color/text_hint"
+                android:textSize="@dimen/sp_16" />
+
+
+
+            <EditText
+                android:id="@+id/etPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789X"
+                android:hint="Phone number"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="@color/cl_333333"
+                android:textColorHint="@color/text_hint"
+                android:textSize="@dimen/sp_16" />
+
+
+            <com.hviewtech.wawupay.ui.widget.StateButton
+                style="@style/MaterialButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_16"
+                android:onClick="addTraveller"
+                android:text="Add"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:normalBackgroundColor="@color/colorPrimary"
+
+                app:normalTextColor="@color/white"
+                app:radius="@dimen/dp_17" />
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+</LinearLayout>

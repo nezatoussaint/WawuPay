@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_activity"
+    android:orientation="vertical">
+
+    <com.hviewtech.wawupay.ui.widget.TitleView
+        android:layout_width="match_parent"
+        app:app_title="Details"
+        android:layout_height="wrap_content" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_13"
+        android:paddingTop="@dimen/dp_26"
+        android:paddingRight="@dimen/dp_13">
+
+
+        <TextView
+            android:id="@+id/label_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:singleLine="true"
+            android:text="Amount"
+            android:textColor="@color/text_label"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_amount"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_24"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_20" />
+
+        <TextView
+            android:id="@+id/label_platform_fee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_amount"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:singleLine="true"
+            android:text="Platform fee"
+            android:textColor="@color/text_label"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/label_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_platform_fee"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:singleLine="true"
+            android:text="Status"
+            android:textColor="@color/text_label"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/label_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_status"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:singleLine="true"
+            android:text="Type"
+            android:textColor="@color/text_label"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/label_payer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_type"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:singleLine="true"
+            android:text="Payer Id"
+            android:textColor="@color/text_label"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/label_receiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_payer"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:singleLine="true"
+            android:text="Receiver Id"
+            android:textColor="@color/text_label"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/label_payment_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_receiver"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:singleLine="true"
+            android:text="Payment Time"
+            android:textColor="@color/text_label"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/label_receive_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_payment_time"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:singleLine="true"
+            android:text="Receive Time"
+            android:textColor="@color/text_label"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/label_orderno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_receive_time"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:singleLine="true"
+            android:text="Order No"
+            android:textColor="@color/text_label"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/platformFee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_amount"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_toRightOf="@id/label_payment_time"
+            android:gravity="right"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_platform_fee"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_toRightOf="@id/label_payment_time"
+            android:gravity="right"
+            android:singleLine="true"
+            android:text="Success"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_status"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_toRightOf="@id/label_payment_time"
+            android:gravity="right"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/payerId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_type"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_toRightOf="@id/label_payment_time"
+            android:gravity="right"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/receiverId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_payer"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_toRightOf="@id/label_payment_time"
+            android:gravity="right"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/paymentTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_receiver"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_toRightOf="@id/label_payment_time"
+            android:gravity="right"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/receiveTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_payment_time"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_toRightOf="@id/label_payment_time"
+            android:gravity="right"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/orderNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_receive_time"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_toRightOf="@id/label_payment_time"
+            android:gravity="right"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_14" />
+
+
+    </RelativeLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5" />
+</LinearLayout>

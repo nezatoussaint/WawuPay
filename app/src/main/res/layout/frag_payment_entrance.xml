@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hviewtech.wawupay.ui.widget.TitleView
+        android:id="@+id/titleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:app_useDefaultBack="false" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_activity"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_45"
+        android:paddingRight="@dimen/dp_12">
+
+        <net.soulwolf.widget.ratiolayout.widget.RatioRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_20"
+            app:layoutAspectRatio="1.6714">
+
+            <TextView
+                android:id="@+id/tv_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/dp_6"
+                android:gravity="center"
+                android:text="Please enter payment password"
+                android:textColor="#999999"
+                android:textSize="@dimen/sp_17" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_below="@id/tv_label"
+                android:layout_marginLeft="@dimen/dp_50"
+                android:layout_marginRight="@dimen/dp_50"
+                android:background="#DADADA" />
+
+            <com.hviewtech.wawupay.ui.widget.PwdInputView
+                android:id="@+id/password"
+                android:layout_width="@dimen/dp_270"
+                android:layout_height="@dimen/dp_45"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:cursorVisible="false"
+                android:digits="0123456789"
+                android:focusableInTouchMode="true"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLength="6" />
+
+        </net.soulwolf.widget.ratiolayout.widget.RatioRelativeLayout>
+
+
+        <com.hviewtech.wawupay.ui.widget.StateButton
+            android:id="@+id/submit"
+            style="@style/MaterialButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginLeft="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_28"
+            android:layout_marginRight="@dimen/dp_24"
+            android:layout_marginBottom="@dimen/dp_28"
+            android:enabled="false"
+            android:onClick="submit"
+            android:text="OK"
+            android:textSize="@dimen/sp_16"
+            app:normalBackgroundColor="#2BCD87"
+            app:normalTextColor="#F3F3F3"
+            app:pressedTextColor="@color/white"
+            app:radius="@dimen/dp_22"
+            app:unableBackgroundColor="#DADADA" />
+
+    </LinearLayout>
+</LinearLayout>

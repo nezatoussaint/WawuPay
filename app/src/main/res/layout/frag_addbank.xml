@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.hviewtech.wawupay.ui.widget.TitleView
+        android:id="@+id/titleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_activity"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_12">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_26"
+            android:paddingTop="@dimen/dp_16"
+            android:paddingRight="@dimen/dp_26"
+            android:paddingBottom="@dimen/dp_16">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dp_6"
+                android:singleLine="true"
+                android:text="Name"
+                android:textColor="@color/text_label"
+                android:textSize="@dimen/sp_15" />
+
+            <LinearLayout
+                android:id="@+id/bankList"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_70"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/withdraw_icon_bankcard" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_17"
+
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bankcard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="Bank of Kigali (0044)"
+                        android:textColor="#444D5C"
+                        android:textSize="@dimen/sp_17" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="Daily trading limit RWF5000.00"
+                        android:textColor="@color/text_label"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_combo" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dp_6"
+                android:paddingBottom="@dimen/dp_6"
+                android:singleLine="true"
+                android:text="Bank card number"
+                android:textColor="@color/text_label"
+                android:textSize="@dimen/sp_15" />
+
+            <com.hviewtech.wawupay.ui.widget.ContentWithSpaceEditText
+                android:id="@+id/cardNum"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_60"
+                android:background="@drawable/bg_updatename_text"
+                android:gravity="center_vertical"
+                android:inputType="number"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                android:singleLine="true"
+                android:textColor="#333333"
+                android:textCursorDrawable="@drawable/cursor_gray"
+                android:textSize="@dimen/sp_17"
+                app:epaysdk_type="card" />
+
+        </LinearLayout>
+
+        <com.hviewtech.wawupay.ui.widget.StateButton
+            android:id="@+id/next"
+            style="@style/MaterialButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_33"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:text="Next"
+            android:textSize="@dimen/sp_16"
+            app:normalBackgroundColor="#2BCD87"
+            app:normalTextColor="#F3F3F3"
+            app:pressedTextColor="@color/white"
+            app:radius="@dimen/dp_22" />
+    </LinearLayout>
+</LinearLayout>

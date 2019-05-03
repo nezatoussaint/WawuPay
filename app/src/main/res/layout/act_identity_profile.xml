@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hviewtech.wawupay.ui.widget.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:app_title="Personal Identification" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_activity"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_26"
+                android:text="@string/prompt_identity_profile"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_14" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_gravity="bottom"
+                        android:background="@color/line_hint" />
+
+                    <RadioGroup
+                        android:id="@+id/type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginRight="@dimen/dp_16"
+                        android:checkedButton="@+id/idcard"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/idcard"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dp_60"
+                            android:layout_weight="1"
+                            android:background="@drawable/identity_profile_selector"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="ID Card"
+                            android:textColor="@drawable/identity_profile_text_selector"
+                            android:textSize="@dimen/sp_16" />
+
+                        <RadioButton
+                            android:id="@+id/passport"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dp_60"
+                            android:layout_weight="1"
+                            android:background="@drawable/identity_profile_selector"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="Passport"
+                            android:textColor="@drawable/identity_profile_text_selector"
+                            android:textSize="@dimen/sp_16" />
+                    </RadioGroup>
+                </FrameLayout>
+
+
+                <EditText
+                    android:id="@+id/id"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_60"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_12"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_8"
+                    android:singleLine="true"
+                    android:textSize="@dimen/sp_16" />
+
+                <EditText
+                    android:id="@+id/realName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_44"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_12"
+                    android:background="@null"
+                    android:hint="Real name"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_8"
+                    android:singleLine="true"
+                    android:textSize="@dimen/sp_16" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="@color/line_hint" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:layout_marginBottom="@dimen/dp_15"
+                    android:text="Upload photos"
+                    android:textSize="@dimen/sp_16" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/divider_space_hori24"
+                    android:orientation="horizontal"
+                    android:showDividers="middle|beginning|end">
+
+
+                    <net.soulwolf.widget.ratiolayout.widget.RatioImageView
+                        android:id="@+id/frontHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/register_addphoto"
+                        android:scaleType="centerInside"
+                        app:layoutAspectRatio="1.4" />
+
+                    <net.soulwolf.widget.ratiolayout.widget.RatioImageView
+                        android:id="@+id/frontPic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/register_addphoto"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:onClick="addFrontPic"
+                        app:layoutAspectRatio="1.4" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/divider_space_hori24"
+                    android:orientation="horizontal"
+                    android:showDividers="middle|beginning|end"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:paddingTop="@dimen/dp_5"
+                        android:paddingBottom="@dimen/dp_12"
+                        android:text="Example"
+                        android:textColor="@color/text_hint"
+                        android:textSize="@dimen/sp_8" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/divider_space_hori24"
+                    android:orientation="horizontal"
+                    android:showDividers="middle|beginning|end">
+
+
+                    <net.soulwolf.widget.ratiolayout.widget.RatioImageView
+                        android:id="@+id/backHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/register_addphoto"
+                        android:scaleType="centerInside"
+                        app:layoutAspectRatio="1.4" />
+
+                    <net.soulwolf.widget.ratiolayout.widget.RatioImageView
+                        android:id="@+id/backPic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/register_addphoto"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:onClick="addBackPic"
+                        app:layoutAspectRatio="1.4" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/divider_space_hori24"
+                    android:orientation="horizontal"
+                    android:showDividers="middle|beginning|end"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:paddingTop="@dimen/dp_5"
+                        android:paddingBottom="@dimen/dp_12"
+                        android:text="Example"
+                        android:textColor="@color/text_hint"
+                        android:textSize="@dimen/sp_8" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.hviewtech.wawupay.ui.widget.StateButton
+                style="@style/MaterialButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginLeft="@dimen/dp_28"
+                android:layout_marginTop="@dimen/dp_27"
+                android:layout_marginRight="@dimen/dp_28"
+                android:onClick="submitIdentity"
+                android:text="Submit"
+                android:textSize="@dimen/sp_16"
+                app:normalBackgroundColor="#2BCD87"
+                app:normalTextColor="#F3F3F3"
+                app:pressedTextColor="@color/white"
+                app:radius="@dimen/dp_22" />
+
+            <com.hviewtech.wawupay.ui.widget.StateButton
+                style="@style/Button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginLeft="@dimen/dp_28"
+                android:layout_marginTop="@dimen/dp_28"
+                android:layout_marginRight="@dimen/dp_28"
+                android:layout_marginBottom="@dimen/dp_24"
+                android:onClick="ignore"
+                android:text="Ignore"
+                android:textColor="@color/green"
+                android:textSize="@dimen/sp_16"
+                app:normalBackgroundColor="#0000"
+                app:normalStrokeColor="@color/green"
+                app:normalStrokeWidth="@dimen/dp_1"
+                app:radius="@dimen/dp_22" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
